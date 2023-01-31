@@ -26,7 +26,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
     - Available: Spring Web > Finish
 ```        
     
-* ★ DB 흐름 ★
+## 💡 DB 흐름
     - Controller > Service > DAO > Mapper > DB
         - Controller(대문) > Service(Service에서 DAO 값을 가져옴) > DAO(DAO 내용이 Mybatis 통해 Mapper) 
             * Controller 대문 역할을 하려면 @Autowired로 Service 값을 가져와야 한다.
