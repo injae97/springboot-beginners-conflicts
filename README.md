@@ -1,25 +1,42 @@
 ## 💡 SpringBoot-Record (CRUD)
-- Spring boot + JSP + Mybatis(Oracle) + Spring Tool Suite (IDE)
+    - Spring boot + JSP + Mybatis(Oracle) + Spring Tool Suite (IDE)
+
+## 💡 OpenJDK 1.8 Download
+```java
+    - https://www.openlogic.com/openjdk-downloads?field_java_parent_version_target_id=416&field_operating_system_target_id=436&field_architecture_target_id=391&field_java_package_target_id=396
+    - Java Version: 8
+    - OPERATING SYSTEM: Windows
+    - ARCHITECTURE: x86 64-bit
+    - JAVA PACKAGE: JDK
+    * 맨위에  .msi로 다운 후 실행 진행 후 > cmd > java -version
+```    
 
 ## 💡 Spring Tool Suite Download 
 https://github.com/spring-projects/sts4/wiki/Previous-Versions
-
     - 컨트롤 + F > Spring Tools 4.13.1 > spring-tool-suite-4-4.13.1.RELEASE-e4.22.0-win32.win32.x86_64.zip
+   
+## 💡 Oracle DB Download
+    a. https://www.oracle.com/kr/database/technologies/xe-downloads.html
+        - OS에 맞게 설치 > setup.exe > DB PWD Setting
+        * DB ID : SYS, SYSTEM 고정
         
+    b. DBeaver 설치
+        - Database : xe
+
 ## 💡 Spring Tool Suite Project Create
 ```java
 - File > New > Spring Starter Project
     - Service URL: https://start.spring.io
-    - Name: SpringBoot-Record
+    - Name: Hello
     - Type: Maven 
-    - Packaging: War
+    - Packaging: Jar
     - Java Version: 8
     - Language: Java
-    - Group: com.spring.boot
-    - Artifact: SpringBoot-Record
+    - Group: com.example
+    - Artifact: Hello
     - Version: 0.0.1-SNAPSHOT
-    - Description: SpringBoot-Record
-    - Package: com.spring.boot
+    - Description: springboot-beginners
+    - Package: com.example.hello
     
 - Dependencies
     - Spring Boot Version: 2.7.8
