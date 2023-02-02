@@ -636,6 +636,7 @@ e. Controller
         }
         
         
+        
 f. JSP(view)
     - /src/main/webapp/WEB-INF/views/member/member_join.jsp
     - /src/main/webapp/WEB-INF/views/member/member_list.jsp
