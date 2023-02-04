@@ -227,17 +227,21 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                 <td>삭제</td>
             </tr>
             
-## 💡 데이터 연결 흐름(Controller > Service)    
+## 💡 데이터 연결 흐름 - DI/Ioc(Controller > Service)    
     - 클라이언트(Chrome) > request > Controller(안내소) > Service(로그인 처리, 실제 업무처리) > Controller(안내소)
     
     a. Controller
         - /src/main/java/com/boot/sailing/controller/MenuCon.java
+        
+            @Autowired
+            MenuSvc menuSvc;
+            
             @GetMapping("/menu")
             public String doMenu(Model model) {
 
-                List<Map<String, Object>> list = new MenuSvc().doList(); // MenuSvc.java에서 doList 메소드 호출 
+                // List<Map<String, Object>> list = new MenuSvc().doList(); // MenuSvc.java에서 새로운 객체를 생성하여 doList 메소드 호출 
+                List<Map<String, Object>> list = menuSvc.doList(); // MenuSvc에 @Service로 Bean을 등록한 것을 주입(Injection)을 통해 사용
 
-                // Data 전송 - Model
                 model.addAttribute("list", list);
                 model.addAttribute("hello", "========== MenuCon ==========");
 
@@ -260,7 +264,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
 
             import lombok.extern.log4j.Log4j2;
 
-            @Service
+            @Service 
             @Log4j2
             public class MenuSvc {
                 
@@ -268,8 +272,8 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                     log.info("================ MenuSvc , 생성자 ===================");
                 }
                 
+                // Data Create - List, Map
                 public List<Map<String, Object>> doList() {
-                    // Data Create - List, Map
                     List<Map<String, Object>> list = new ArrayList<>();
                     Map<String, Object> map = new HashMap<>();
 
@@ -291,11 +295,18 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                     map2.put("mod_day", "2021.10.29");
                     list.add(map2);
                     
+                    Map<String, Object> map3 = new HashMap<>();
+
+                    map3.put("No", "3");
+                    map3.put("name", "카푸치노");
+                    map3.put("kind", "커피");
+                    map3.put("price", "6,000");
+                    map3.put("reg_day", "2020.10.29");
+                    map3.put("mod_day", "2021.10.29");
+                    list.add(map3);
+                    
                     log.info(list);
 
                     return list;
                 }
             }
-
-    * @Log4j2: 로그 확인(Lombok)
-        - log.info(변수명);
