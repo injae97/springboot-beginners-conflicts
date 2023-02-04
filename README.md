@@ -1,6 +1,10 @@
-## 💡 SpringBoot-Record (CRUD)
-    - Spring boot + JSP + Mybatis(Oracle) + Spring Tool Suite (IDE)
-
+## 💡 SpringBoot-Beginners
+    - Framework: Spring boot
+    - View: Thymeleaf
+    - DBMS: MariaDB
+    - Mapper: MyBatis
+    - IDE: Spring Tool Suite
+	
 ## 💡 OpenJDK 1.8 Download
 ```java
 - https://www.openlogic.com/openjdk-downloads?field_java_parent_version_target_id=416&field_operating_system_target_id=436&field_architecture_target_id=391&field_java_package_target_id=396
