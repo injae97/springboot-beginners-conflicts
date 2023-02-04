@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.extern.log4j.Log4j2;
 
-@Service
+@Service 
 @Log4j2
 public class MenuSvc {
 	
@@ -39,6 +39,16 @@ public class MenuSvc {
 		map2.put("reg_day", "2020.10.29");
 		map2.put("mod_day", "2021.10.29");
 		list.add(map2);
+		
+		Map<String, Object> map3 = new HashMap<>();
+
+		map3.put("No", "3");
+		map3.put("name", "카푸치노");
+		map3.put("kind", "커피");
+		map3.put("price", "6,000");
+		map3.put("reg_day", "2020.10.29");
+		map3.put("mod_day", "2021.10.29");
+		list.add(map3);
 		
 		log.info(list);
 
