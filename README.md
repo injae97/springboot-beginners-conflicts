@@ -69,7 +69,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         a. Project(Gradle, Maven 중 선택), Language(Java), Spring Boot Version 2.7.8 선택 
         b. 이제 여기서 dependency 할 것을 ADD DEPENDNECIES 클릭 후 입력(e.g MyBatis Framework)
             - EXPLORE > build.gradle > dependencies - implementation에 있는 implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0' 
-                    
+ 
 ## 💡 SpringBoot-Beginners Project Start !!!        
     a. 프로젝트 생성 
         - File > New > Spring Starter Project
@@ -127,13 +127,44 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         - /Sailing/src/main/java/com/boot/sailing/vo                         
         - /Sailing/src/main/java/com/boot/sailing/comm
         * 각 Html 파일마다 controller 생성(HomeCon, MemberCon, MenuCon, OrderCon - class)  
+
+## 💡 How to set @Log4j2 in STS Using Gradle?
+    a. dependency 추가
+        - /Sailing/build.gradle
+            implementation('org.slf4j:jcl-over-slf4j')
+            implementation('ch.qos.logback:logback-classic')
+    
+    b. logback-spring.xml 생성
+        - /src/main/resources/logback-spring.xml    
+            <?xml version="1.0" encoding="UTF-8"?>
+            <configuration>
+                <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+                    <encoder>
+                        <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative] [%thread] %-5level %logger{36} - %msg%n</Pattern>
+                    </encoder>
+                </appender>
+
+                <!-- Logback 은 5단계의 로그 레벨을 가진다.
+                    심각도 수준은 off > Error > Warn > Info > Debug > Trace 이다.
+                -->
+                
+                <!-- name은 package 이름 -->
+                <logger name="com.spring.boot" level="Debug"/>
+                <root level="Info">
+                    <appender-ref ref="console"/>
+                </root>
+            </configuration>
+    
+    c. Project and External Dependencies 
+        - 프로젝트 내에 Project and External Dependencies > lombok-1.18.24jar > Run As > Java Application > Proceed > Install / Update > Finish > Restart
+        * Project > Clean > Restart
         
 ## 💡 화면 연결 흐름(View - html)    
     - 클라이언트(Chrome) > request > Controller(안내소) > View(.html) > response > 클라이언트(Chrome)
     
     a. Controller 설정 
         - Sailing/src/main/java/com/boot/sailing/controller/HomeCon.java
-        
+  
             @Controller
             public class HomeCon {
 
@@ -195,3 +226,76 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                 <td>수정</td>
                 <td>삭제</td>
             </tr>
+            
+## 💡 데이터 연결 흐름(Controller > Service)    
+    - 클라이언트(Chrome) > request > Controller(안내소) > Service(로그인 처리, 실제 업무처리) > Controller(안내소)
+    
+    a. Controller
+        - /src/main/java/com/boot/sailing/controller/MenuCon.java
+            @GetMapping("/menu")
+            public String doMenu(Model model) {
+
+                List<Map<String, Object>> list = new MenuSvc().doList(); // MenuSvc.java에서 doList 메소드 호출 
+
+                // Data 전송 - Model
+                model.addAttribute("list", list);
+                model.addAttribute("hello", "========== MenuCon ==========");
+
+                return "/menu/menu"; 
+            }  
+            
+    * Controller에서 만들었던 업무 로직을 Service로 뺌
+    
+    b. Service
+        - /src/main/java/com/boot/sailing/service/MenuSvc.java
+        
+            package com.boot.sailing.service;
+
+            import java.util.ArrayList;
+            import java.util.HashMap;
+            import java.util.List;
+            import java.util.Map;
+
+            import org.springframework.stereotype.Service;
+
+            import lombok.extern.log4j.Log4j2;
+
+            @Service
+            @Log4j2
+            public class MenuSvc {
+                
+                public MenuSvc() {
+                    log.info("================ MenuSvc , 생성자 ===================");
+                }
+                
+                public List<Map<String, Object>> doList() {
+                    // Data Create - List, Map
+                    List<Map<String, Object>> list = new ArrayList<>();
+                    Map<String, Object> map = new HashMap<>();
+
+                    map.put("No", "1");
+                    map.put("name", "아이스아메");
+                    map.put("kind", "커피");
+                    map.put("price", "5,000");
+                    map.put("reg_day", "2020.10.29");
+                    map.put("mod_day", "2021.10.29");
+                    list.add(map);
+
+                    Map<String, Object> map2 = new HashMap<>();
+
+                    map2.put("No", "2");
+                    map2.put("name", "카푸치노");
+                    map2.put("kind", "커피");
+                    map2.put("price", "6,000");
+                    map2.put("reg_day", "2020.10.29");
+                    map2.put("mod_day", "2021.10.29");
+                    list.add(map2);
+                    
+                    log.info(list);
+
+                    return list;
+                }
+            }
+
+    * @Log4j2: 로그 확인(Lombok)
+        - log.info(변수명);
