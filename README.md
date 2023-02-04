@@ -50,8 +50,8 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
 
 ## 💡 How to add dependency in springboot?
     - https://start.spring.io/
-    a. Project(Gradle, Maven 중 선택), Language(Java), Spring Boot Version 2.7.8 선택 
-    b. 이제 여기서 dependency 할 것을 ADD DEPENDNECIES 클릭 후 입력(e.g MyBatis Framework)
-        - EXPLORE > build.gradle > dependencies - implementation에 있는 implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0' 복사하여 사용
+        a. Project(Gradle, Maven 중 선택), Language(Java), Spring Boot Version 2.7.8 선택 
+        b. 이제 여기서 dependency 할 것을 ADD DEPENDNECIES 클릭 후 입력(e.g MyBatis Framework)
+            - EXPLORE > build.gradle > dependencies - implementation에 있는 implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0' 복사하여 사용
         
         
