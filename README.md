@@ -138,22 +138,20 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         
         a. Controller 설정 
             - Sailing/src/main/java/com/boot/sailing/controller/HomeCon.java
-            ```java
-            package com.boot.sailing.controller;
+                package com.boot.sailing.controller;
 
-            import org.springframework.stereotype.Controller;
-            import org.springframework.web.bind.annotation.RequestMapping;
+                import org.springframework.stereotype.Controller;
+                import org.springframework.web.bind.annotation.RequestMapping;
 
-            @Controller
-            public class HomeCon {
+                @Controller
+                public class HomeCon {
 
-                // URL에서 localhost 또는 localhost/home로 들어오면
-                @RequestMapping({"/", "/home"})
-                public String doHome() {
-                return "/home/home"; // template > home > home.html 화면을 보여줌
+                    // URL에서 localhost 또는 localhost/home로 들어오면
+                    @RequestMapping({"/", "/home"})
+                    public String doHome() {
+                    return "/home/home"; // template > home > home.html 화면을 보여줌
+                    }
                 }
-            }
-            ```
             
         b. html 설정
             - /Sailing/src/main/resources/templates/home/home.html
