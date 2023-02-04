@@ -17,7 +17,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
 - OPERATING SYSTEM: Windows
 - ARCHITECTURE: x86 64-bit
 - JAVA PACKAGE: JDK
-* 맨위에  .msi로 다운 후 실행 진행 후 > cmd > java -version
+* 맨위에 .msi로 다운 후 실행 진행 후 > cmd > java -version
 ```    
    
 ## 💡 Oracle DB Download
@@ -37,7 +37,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
 			        
 ## 💡 SpringBoot-Beginners Project Start !!!		
 	a. 프로젝트 생성 
-	```java
+    ```java
 	- File > New > Spring Starter Project
 		- Service URL: https://start.spring.io
 		- Name: Sailing
