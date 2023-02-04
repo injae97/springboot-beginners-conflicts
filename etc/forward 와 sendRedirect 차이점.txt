@@ -9,7 +9,6 @@
         - https://www.naver.com (호출 실패 - Error)
         * 구조 : 요청자(Client) > request > localhost[WAS] Call > WEB-INF/views/list.jsp        
      
-     
     b. sendRedirect(response) = Spring redirect:/path 
         - /WEB-INF/views/*.jsp (호출 실패 - Error)
             - response는 요청자로 보내줘야하는데 자기 일 끝났다고 요청자 말고 직접 호출시킴(그래서 외부 접속이 됨)
