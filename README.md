@@ -146,8 +146,9 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         - /Sailing/src/main/resources/templates/home/home.html
             - <a href="/home/home.html">Home</a> 👉 <a href="/home">Home</a> 변경
                     
-## 💡 데이터 연결 흐름(BE 👉 View(Thymeleaf)에 데이터 주기)    
-    - 클라이언트(Chrome) > request > Controller(안내소) > Data, Model > View(Thymeleaf) > response > 클라이언트(Chrome)
+## 💡 데이터 연결 흐름(Backend 👉 View(Thymeleaf)에 데이터 주기)    
+    - 클라이언트(Chrome) > request > Controller(안내소) > Data, Model > 
+	    - View(Thymeleaf) > response > 클라이언트(Chrome)
 
     a. MenuCon.java
         @GetMapping("/menu")
