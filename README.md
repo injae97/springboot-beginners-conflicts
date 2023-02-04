@@ -134,28 +134,70 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                                 
         d. DB 생성
             - /Sailing/src/main/java/com/boot/sailing/comm
-       
-       
-    d. 화면 연결 흐름
-        - 클라이언트(Chrome) > request > Controller(안내소) > View(.html) > response > 클라이언트(Chrome)
+      
+## 💡 화면 연결 흐름
+    - 클라이언트(Chrome) > request > Controller(안내소) > View(.html) > response > 클라이언트(Chrome)
+    
+    a. Controller 설정 
+        - Sailing/src/main/java/com/boot/sailing/controller/HomeCon.java
         
-        a. Controller 설정 
-            - Sailing/src/main/java/com/boot/sailing/controller/HomeCon.java
-                package com.boot.sailing.controller;
+            @Controller
+            public class HomeCon {
 
-                import org.springframework.stereotype.Controller;
-                import org.springframework.web.bind.annotation.RequestMapping;
-
-                @Controller
-                public class HomeCon {
-
-					// URL에서 localhost/home로 들어오면
-					@GetMapping("/home")
-					public String doHome() {
-						return "/home/home"; // template > home > home.html 화면을 보여줌
-					}
+                // URL에서 localhost/home로 들어오면
+                @GetMapping("/home")
+                public String doHome() {
+                    return "/home/home"; // template > home > home.html 화면을 보여줌
                 }
+            }
+        
+    b. html 설정
+        - /Sailing/src/main/resources/templates/home/home.html
+            - <a href="/home/home.html">Home</a> 👉 <a href="/home">Home</a> 변경
+                    
+## 💡 데이터 연결 흐름(BE 👉 View(Thymeleaf)에 데이터 주기)    
+    - 클라이언트(Chrome) > request > Controller(안내소) > Data, Model > View(Thymeleaf) > response > 클라이언트(Chrome)
+
+    a. MenuCon.java
+        @GetMapping("/menu")
+            public String doHome(Model model) {
+
+            // Data Create - List, Map
+            List<Map<String, Object>> list = new ArrayList<>();
+            Map<String, Object> map = new HashMap<>();
+
+            map.put("No", "1");
+            map.put("name", "아이스아메");
+            map.put("kind", "커피");
+            map.put("price", "5,000");
+            map.put("reg_day", "2020.10.29");
+            map.put("mod_day", "2021.10.29");
+            list.add(map);
+
+            // Data 전송 - Model
+            model.addAttribute("list", list);
+            model.addAttribute("hello", "========== MenuCon ==========");
+
+            return "/menu/menu"; 
+        }    
+    
+    b. Thymeleaf - Menu.html
+        * <html lang="ko"  xmlns:th="http://www.thymeleaf.org">
             
-        b. html 설정
-            - /Sailing/src/main/resources/templates/home/home.html
-                - <a href="/home/home.html">Home</a> 👉 <a href="/home">Home</a> 변경
+        a. variable import 
+            - <h3>[ Coffee menu Management <span style="font-size:30px;">&#9749;</span> ] <th:block th:text="${hello}"></th:block>  </h3>
+
+        b. for loop
+            <!--MenuCon에 list에 넣은 값을 호출 -->
+            <!-- Thymeleaf - for loop -->      
+            <tr th:each="prod : ${list}">
+                <td>Chk</td>
+                <td th:text="${prod.get('No')}">커피No</th>
+                <td th:text="${prod.get('name')}">메뉴명</td>
+                <td th:text="${prod.get('kind')}">종류</td>
+                <td th:text="${prod.get('price')}">가격</td>
+                <td th:text="${prod.get('reg_day')}">등록일</td>
+                <td th:text="${prod.get('mod_day')}">수정일</td>
+                <td>수정</td>
+                <td>삭제</td>
+            </tr>
