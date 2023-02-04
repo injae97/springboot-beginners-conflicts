@@ -10,23 +10,23 @@ public class RestCon {
 	public String doRest() {
 		String strHtml = "";
 		
-        strHtml = "<html>\n" +
-                  "<head>\n" +
-                  " <meta charset=\"UTF-8\">\n" +
-                  " <title>È¸»ç Á÷¿ø ¸®½ºÆ®</title>\n" +
-                  "</head>\n" +
-                  "<body>\n" +
-                  "<h1> ¡á È¸»ç Á÷¿ø ¸®½ºÆ® </h1>\n" +
-                  "<h1>  HTML -> Servlet  </h1>\n" +
-                  "<a href='./index.html'>¡Ü Home </a>\n" +
-                  "<p>\n" +
-                  "<table style='width: 400px;'>\n"+
-                  "<tr style='height: 40px'>\n"+
-                  "<th>No</th>\n"+
-                  "<th align='center'>ÀÌ¸§</th>\n"+
-                  "<th align='center'>³ªÀÌ</th>\n"+
-                  "<th align='center'>µî·ÏÀÏÀÚ</th>\n"+
-                  "</tr>\n";
+        strHtml="<html>\n" +
+               "<head>\n" +
+               " <meta charset=\"UTF-8\">\n" +
+               " <title>íšŒì‚¬ ì§ì› ë¦¬ìŠ¤íŠ¸</title>\n" +
+               "</head>\n" +
+               "<body>\n" +
+               "<h1> â–  íšŒì‚¬ ì§ì› ë¦¬ìŠ¤íŠ¸ </h1>\n" +
+               "<h1>  HTML -> Servlet  </h1>\n" +
+               "<a href='./index.html'>â— Home </a>\n" +
+               "<p>\n" +
+               "<table style='width: 400px;'>\n"+
+               "<tr style='height: 40px'>\n"+
+               "<th>No</th>\n"+
+               "<th align='center'>ì´ë¦„</th>\n"+
+               "<th align='center'>ë‚˜ì´</th>\n"+
+               "<th align='center'>ë“±ë¡ì¼ì</th>\n"+
+               "</tr>\n";
         
 		return strHtml;
 	}

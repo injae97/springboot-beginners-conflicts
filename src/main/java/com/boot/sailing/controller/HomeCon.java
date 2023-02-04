@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeCon {
 
-	// URL¿¡¼­ localhost/home·Î µé¾î¿À¸é
+	// URLì—ì„œ localhost/homeë¡œ ë“¤ì–´ì˜¤ë©´
 	@GetMapping("/home")
 	public String doHome() {
-		return "/home/home"; // template > home > home.html È­¸éÀ» º¸¿©ÁÜ
+		return "/home/home"; // template > home > home.html í™”ë©´ì„ ë³´ì—¬ì¤Œ
 	}
 	
 	@GetMapping("/rest2")
