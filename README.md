@@ -88,34 +88,8 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         - Dependencies
             - Spring Boot Version: 2.7.8
             - Available: Spring Web, Spring Boot DevTools, Lombok, MariaDB Driver, Thymeleaf > Finish
-            
-            
-    b.  자바단 - 폴더 생성 및 코드 작성 
-        a. controller 폴더 경로까지 생성
-            - /src/main/java/com/example/WebTransition/controller
-                            
-        b. service 폴더 생성
-            - /src/main/java/com/example/WebTransition/service
-            
-        c. vo 폴더 생성
-            - /src/main/java/com/example/WebTransition/vo
-                                
-        d. DB 연결 폴더 생성
-            - /src/main/java/com/example/WebTransition/comm
-           
-           
-    c. 화면단 - 폴더 생성 및 코드 작성 
-        a. view 폴더 경로까지 생성
-            - /src/main/webapp/WEB-INF/view
-
-        b. image 폴더 생성
-            - /src/main/webapp/img
-
-        c. index 페이지 생성
-            - /src/main/webapp/index.html
-           
-           
-    d. application.properties 설정
+                  
+    b. application.properties 설정
         # port setting
         server.port = 8080
 
@@ -126,6 +100,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
 
         # devtools reload(html, jsp)
         spring.devtools.livereload.enabled=true
+        spring.devtools.restart.enabled=false
 
         # MariaDB
         spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
@@ -143,3 +118,43 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         #mybatis.mapper-locations=classpath:sqlmapper/*.xml
         #mybatis.configuration.map-underscore-to-camel-case=true
         #mybatis.type-aliases-package=com.spring.boot.dto
+        
+    c.  자바단 - 패키지 생성
+        a. controller 생성
+            - /Sailing/src/main/java/com/boot/sailing/controller
+                * 각 Html 파일마다 controller 생성(HomeCon, MemberCon, MenuCon, OrderCon - class)
+            
+        b. service 생성
+            - /Sailing/src/main/java/com/boot/sailing/service
+            
+        c. vo 생성
+            - /Sailing/src/main/java/com/boot/sailing/vo
+                                
+        d. DB 생성
+            - /Sailing/src/main/java/com/boot/sailing/comm
+       
+    d. 화면 연결 흐름
+        - 클라이언트(Chrome) > request > Controller(안내소) > View(.html) > response > 클라이언트(Chrome)
+        
+        a. Controller 설정 
+            - Sailing/src/main/java/com/boot/sailing/controller/HomeCon.java
+            ```java
+            package com.boot.sailing.controller;
+
+            import org.springframework.stereotype.Controller;
+            import org.springframework.web.bind.annotation.RequestMapping;
+
+            @Controller
+            public class HomeCon {
+
+                // URL에서 localhost 또는 localhost/home로 들어오면
+                @RequestMapping({"/", "/home"})
+                public String doHome() {
+                return "/home/home"; // template > home > home.html 화면을 보여줌
+                }
+            }
+            ```
+            
+        b. html 설정
+            - /Sailing/src/main/resources/templates/home/home.html
+                - <a href="/home/home.html">Home</a> 👉 <a href="/home">Home</a> 변경
