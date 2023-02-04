@@ -119,14 +119,16 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         #mybatis.mapper-locations=classpath:sqlmapper/*.xml
         #mybatis.configuration.map-underscore-to-camel-case=true
         #mybatis.type-aliases-package=com.spring.boot.dto
-        
+    
+    
     c.  자바단 - 패키지 생성(Controller, Service, Vo, Comm)
-        - /Sailing/src/main/java/com/boot/sailing/controller
-            * 각 Html 파일마다 controller 생성(HomeCon, MemberCon, MenuCon, OrderCon - class)          
+        - /Sailing/src/main/java/com/boot/sailing/controller        
         - /Sailing/src/main/java/com/boot/sailing/service          
         - /Sailing/src/main/java/com/boot/sailing/vo                         
         - /Sailing/src/main/java/com/boot/sailing/comm
-## 💡 화면 연결 흐름
+        * 각 Html 파일마다 controller 생성(HomeCon, MemberCon, MenuCon, OrderCon - class)  
+        
+## 💡 화면 연결 흐름(View - html)    
     - 클라이언트(Chrome) > request > Controller(안내소) > View(.html) > response > 클라이언트(Chrome)
     
     a. Controller 설정 
@@ -148,7 +150,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                     
 ## 💡 데이터 연결 흐름(Backend 👉 View(Thymeleaf)에 데이터 주기)    
     - 클라이언트(Chrome) > request > Controller(안내소) > Data, Model > View(Thymeleaf) > 
-	    response > 클라이언트(Chrome)
+        response > 클라이언트(Chrome)
 
     a. MenuCon.java
         @GetMapping("/menu")
@@ -193,5 +195,3 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                 <td>수정</td>
                 <td>삭제</td>
             </tr>
-            
-            
