@@ -20,49 +20,49 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
 * 맨위에 .msi로 다운 후 실행 진행 후 > cmd > java -version
 ```    
 
-## 💡 MariaDB  Download
-    a. https://mariadb.org/download
-        - OS에 맞게 설치 > MariaDB Server Version: 10.10.2 > Download
-        - mariadb-10.10.2-winx64 실행 
-            * DB ID, PASSWORD : root > use UTF 8 as default server's character set 체크 > Next
-            * Port: Mysql(3306) 과 동일 하므로 3307로 설정 후 > install
-        
-    b. HeidiSQL 실행
-        a. HeidiSQL 설정
-            - 세션 이름: Springboot-Admin
-            - 네트워크 유형: MariaDB or MySQL(TCP/IP)
-            - 호스트명 / IP: 127.0.0.1
-            - 사용자: root
-            - 암호: root
-            - 포트: 3307
+## 💡 DB Download(MariaDB, Oracle)
+    a. MariaDB 
+        a. https://mariadb.org/download
+            - OS에 맞게 설치 > MariaDB Server Version: 10.10.2 > Download
+            - mariadb-10.10.2-winx64 실행 
+                * DB ID, PASSWORD : root > use UTF 8 as default server's character set 체크 > Next
+                * Port: Mysql(3306) 과 동일 하므로 3307로 설정 후 > install
+            
+        b. HeidiSQL 실행
+            a. HeidiSQL 설정
+                - 세션 이름: Springboot-Admin
+                - 네트워크 유형: MariaDB or MySQL(TCP/IP)
+                - 호스트명 / IP: 127.0.0.1
+                - 사용자: root
+                - 암호: root
+                - 포트: 3307
 
-        b. 데이터베이스 생성
-            - Springboot-Admin에 오른쪽 마우스 > 새로 생성 > 데이터베이스 생성 
-                - 이름: boot
-                - 조합: utf8mb4_general_ci 
-        
-        c. 해당 데이터베이스 접근 권한 설정
-            - 사용자 인증 및 권한 관리 클릭(사람 모양) 
-                - 사용자 계정 추가 > 사용자 이름, 암호: boot, 호스트에서: localhost
-                - 객체 추가: 아까 만들어 놓은 데이터베이스: boot > 접근 허용 권한 체크 > 저장 > 닫기 
-                
-        d. 생성한 계정으로 데이터베이스 접속
-            - 세션 이름: Springboot-boot
-            - 네트워크 유형: MariaDB or MySQL(TCP/IP)
-            - 호스트명 / IP: 127.0.0.1
-            - 사용자: boot
-            - 암호: boot
-            - 포트: 3307
-            * 데이터베이스: boot
+            b. 데이터베이스 생성
+                - Springboot-Admin에 오른쪽 마우스 > 새로 생성 > 데이터베이스 생성 
+                    - 이름: boot
+                    - 조합: utf8mb4_general_ci 
+            
+            c. 해당 데이터베이스 접근 권한 설정
+                - 사용자 인증 및 권한 관리 클릭(사람 모양) 
+                    - 사용자 계정 추가 > 사용자 이름, 암호: boot, 호스트에서: localhost
+                    - 객체 추가: 아까 만들어 놓은 데이터베이스: boot > 접근 허용 권한 체크 > 저장 > 닫기 
+                    
+            d. 생성한 계정으로 데이터베이스 접속
+                - 세션 이름: Springboot-boot
+                - 네트워크 유형: MariaDB or MySQL(TCP/IP)
+                - 호스트명 / IP: 127.0.0.1
+                - 사용자: boot
+                - 암호: boot
+                - 포트: 3307
+                * 데이터베이스: boot
     
-## 💡 Oracle DB Download
-    a. https://www.oracle.com/kr/database/technologies/xe-downloads.html
-        - OS에 맞게 설치 > setup.exe > DB PWD Setting
-        * DB ID : SYS, SYSTEM 고정
-        
-    b. DBeaver 설치
-        - Database : xe
-          
+    b. Oracle DB
+        a. https://www.oracle.com/kr/database/technologies/xe-downloads.html
+            - OS에 맞게 설치 > setup.exe > DB PWD Setting
+            * DB ID : SYS, SYSTEM 고정
+            
+        b. DBeaver 설치
+            - Database : xe
 
 ## 💡 How to add dependency in springboot?
     - https://start.spring.io/
