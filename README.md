@@ -37,24 +37,24 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
 			        
 ## 💡 SpringBoot-Beginners Project Start !!!		
 	a. 프로젝트 생성 
-    ```java
-	- File > New > Spring Starter Project
-		- Service URL: https://start.spring.io
-		- Name: Sailing
-		- Type: Gradle - Groovy 
-		- Packaging: Jar
-		- Java Version: 8
-		- Language: Java
-		- Group: com.boot
-		- Artifact: Sailing
-		- Version: 0.0.1-SNAPSHOT
-		- Description: springboot-beginners
-		- Package: com.boot.sailing
-		
-	- Dependencies
-		- Spring Boot Version: 2.7.8
-		- Available: Spring Web, Spring Boot DevTools, Lombok, MariaDB Driver, Thymeleaf > Finish
-	```
+		```java
+		- File > New > Spring Starter Project
+			- Service URL: https://start.spring.io
+			- Name: Sailing
+			- Type: Gradle - Groovy 
+			- Packaging: Jar
+			- Java Version: 8
+			- Language: Java
+			- Group: com.boot
+			- Artifact: Sailing
+			- Version: 0.0.1-SNAPSHOT
+			- Description: springboot-beginners
+			- Package: com.boot.sailing
+			
+		- Dependencies
+			- Spring Boot Version: 2.7.8
+			- Available: Spring Web, Spring Boot DevTools, Lombok, MariaDB Driver, Thymeleaf > Finish
+		```
 			
 	b.  자바단 - 폴더 생성 및 코드 작성 
 		 a. controller 폴더 경로까지 생성
