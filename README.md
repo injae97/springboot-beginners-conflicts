@@ -120,21 +120,12 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         #mybatis.configuration.map-underscore-to-camel-case=true
         #mybatis.type-aliases-package=com.spring.boot.dto
         
-        
-    c.  자바단 - 패키지 생성
-        a. controller 생성
-            - /Sailing/src/main/java/com/boot/sailing/controller
-                * 각 Html 파일마다 controller 생성(HomeCon, MemberCon, MenuCon, OrderCon - class)
-            
-        b. service 생성
-            - /Sailing/src/main/java/com/boot/sailing/service
-            
-        c. vo 생성
-            - /Sailing/src/main/java/com/boot/sailing/vo
-                                
-        d. DB 생성
-            - /Sailing/src/main/java/com/boot/sailing/comm
-      
+    c.  자바단 - 패키지 생성(Controller, Service, Vo, Comm)
+        - /Sailing/src/main/java/com/boot/sailing/controller
+            * 각 Html 파일마다 controller 생성(HomeCon, MemberCon, MenuCon, OrderCon - class)          
+        - /Sailing/src/main/java/com/boot/sailing/service          
+        - /Sailing/src/main/java/com/boot/sailing/vo                         
+        - /Sailing/src/main/java/com/boot/sailing/comm
 ## 💡 화면 연결 흐름
     - 클라이언트(Chrome) > request > Controller(안내소) > View(.html) > response > 클라이언트(Chrome)
     
@@ -201,3 +192,5 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
                 <td>수정</td>
                 <td>삭제</td>
             </tr>
+            
+            
