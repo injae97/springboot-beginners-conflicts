@@ -27,15 +27,15 @@ public class MenuCon {
 	    map.put("mod_day", "2021.10.29");
 	    list.add(map);
 
-	    map.clear();
+		Map<String, Object> map2 = new HashMap<>();
 
-	    map.put("No", "2");
-	    map.put("name", "카푸치노");
-	    map.put("kind", "커피");
-	    map.put("price", "6,000");
-	    map.put("reg_day", "2020.10.29");
-	    map.put("mod_day", "2021.10.29");
-	    list.add(map);
+	    map2.put("No", "2");
+	    map2.put("name", "카푸치노");
+	    map2.put("kind", "커피");
+	    map2.put("price", "6,000");
+	    map2.put("reg_day", "2020.10.29");
+	    map2.put("mod_day", "2021.10.29");
+	    list.add(map2);
 	    
 	    
 		// Data 전송 - Model
