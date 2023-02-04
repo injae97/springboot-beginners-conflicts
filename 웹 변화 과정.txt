@@ -28,7 +28,7 @@
                     - Service URL: https://start.spring.io
                     - Name: Web-Transition 
                     - Type: Gradle-Groovy 
-                    - Packaging: War (Jsp - War)
+                    - Packaging: War (War는 webapp/WEB-INF/view 구조로 되어 있기 때문 jsp 사용 가능, Jar는 X)
                     - Java Version: 8
                     - Language: Java
                     - Group: com.Web-Transition 
@@ -36,7 +36,7 @@
                     - Version: 0.0.1-SNAPSHOT
                     - Description: Web-Transition Process
                     - Package: com.example.Web-Transition 
-                    
+
                 - Dependencies
                     - Spring Boot Version: 2.7.8
                     - Available: Spring Web, Spring boot DevTools, Lombok, Oracle Driver > Finish
