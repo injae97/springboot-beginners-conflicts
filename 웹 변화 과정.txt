@@ -24,7 +24,6 @@
             - 처음 프로젝트 했을 때의 흐름만 간단하게 작성
             
             a. 프로젝트 생성 
-                ```java
                 - File > New > Spring Starter Project
                     - Service URL: https://start.spring.io
                     - Name: Web-Transition 
@@ -41,7 +40,6 @@
                 - Dependencies
                     - Spring Boot Version: 2.7.8
                     - Available: Spring Web, Spring boot DevTools, Lombok, Oracle Driver > Finish
-                ```  
             
             b.  자바단 - 폴더 생성 및 코드 작성 
                  a. controller 폴더 경로까지 생성
