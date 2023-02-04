@@ -5,7 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.boot.sailing.dao.MenuDao;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -13,18 +16,30 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class MenuSvc {
 	
+	@Autowired
+	MenuDao menuDao;
+	
 	public MenuSvc() {
-		log.info("================ MenuSvc , »ı¼ºÀÚ ===================");
+		log.info("================ MenuSvc , ìƒì„±ì ===================");
 	}
 	
-	// Data Create - List, Map
 	public List<Map<String, Object>> doList() {
+
+		List<Map<String, Object>> list = menuDao.doList();
+		
+		log.info(list);
+		return list;	
+	}
+	
+	
+	// Data Create - List, Map(Old)
+	public List<Map<String, Object>> doListOld() {
 		List<Map<String, Object>> list = new ArrayList<>();
 		Map<String, Object> map = new HashMap<>();
 
-		map.put("No", "1");
-		map.put("name", "¾ÆÀÌ½º¾Æ¸Ş¸®Ä«³ë");
-		map.put("kind", "Ä¿ÇÇ");
+		map.put("no", "1");
+		map.put("coffee", "ì•„ì´ìŠ¤ì•„ë©”ë¦¬ì¹´ë…¸");
+		map.put("kind", "ì»¤í”¼");
 		map.put("price", "5,000");
 		map.put("reg_day", "2020.10.29");
 		map.put("mod_day", "2021.10.29");
@@ -32,9 +47,9 @@ public class MenuSvc {
 
 		Map<String, Object> map2 = new HashMap<>();
 
-		map2.put("No", "2");
-		map2.put("name", "Ä«ÇªÄ¡³ë");
-		map2.put("kind", "Ä¿ÇÇ");
+		map2.put("no", "2");
+		map2.put("coffee", "ì¹´í‘¸ì¹˜ë…¸");
+		map2.put("kind", "ì»¤í”¼");
 		map2.put("price", "6,000");
 		map2.put("reg_day", "2020.10.30");
 		map2.put("mod_day", "2021.10.30");
@@ -42,9 +57,9 @@ public class MenuSvc {
 		
 		Map<String, Object> map3 = new HashMap<>();
 
-		map3.put("No", "3");
-		map3.put("name", "Ä«¶ó¸á ¸¶³¢¾ß¶Ç");
-		map3.put("kind", "Ä¿ÇÇ");
+		map3.put("no", "3");
+		map3.put("coffee", "ì¹´ë¼ë©œ ë§ˆë¼ì•¼ë˜");
+		map3.put("kind", "ì»¤í”¼");
 		map3.put("price", "7,000");
 		map3.put("reg_day", "2020.10.31");
 		map3.put("mod_day", "2021.10.31");
@@ -54,4 +69,7 @@ public class MenuSvc {
 
 		return list;
 	}
+	
+	
+	
 }

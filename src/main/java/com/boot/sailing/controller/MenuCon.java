@@ -13,15 +13,15 @@ import com.boot.sailing.service.MenuSvc;
 @Controller
 public class MenuCon {
 	
-	// @Autowired¸¦ ÅëÇØ ÁÖÀÔ ¹ŞÀ½
+	// @Autowiredë¥¼ í†µí•´ ì£¼ì… ë°›ìŒ
 	@Autowired
 	MenuSvc menuSvc;
 	
 	@GetMapping("/menu")
 	public String doMenu(Model model) {
 
-		// List<Map<String, Object>> list = new MenuSvc().doList(); // MenuSvc.java¿¡¼­ »õ·Î¿î °´Ã¼¸¦ »ı¼ºÇÏ¿© doList ¸Ş¼Òµå È£Ãâ 
-		List<Map<String, Object>> list = menuSvc.doList(); // MenuSvc¿¡ @Service·Î BeanÀ» µî·ÏÇÑ °ÍÀ» @Autowired¸¦ ÅëÇØ ÁÖÀÔ(Injection) ¹Ş¾Æ »ç¿ë
+		// List<Map<String, Object>> list = new MenuSvc().doList(); // MenuSvc.javaì—ì„œ ìƒˆë¡œìš´ ê°ì²´ë¥¼ ìƒì„±í•˜ì—¬ doList ë©”ì†Œë“œ í˜¸ì¶œ 
+		List<Map<String, Object>> list = menuSvc.doList(); // MenuSvcì— @Serviceë¡œ Beanì„ ë“±ë¡í•œ ê²ƒì„ @Autowiredë¥¼ í†µí•´ ì£¼ì…(Injection) ë°›ì•„ ì‚¬ìš©
 
 		model.addAttribute("list", list);
 		model.addAttribute("hello", "========== MenuCon ==========");
