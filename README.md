@@ -89,6 +89,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
             - Spring Boot Version: 2.7.8
             - Available: Spring Web, Spring Boot DevTools, Lombok, MariaDB Driver, Thymeleaf > Finish
                   
+				  
     b. application.properties 설정
         # port setting
         server.port = 8080
@@ -119,6 +120,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         #mybatis.configuration.map-underscore-to-camel-case=true
         #mybatis.type-aliases-package=com.spring.boot.dto
         
+		
     c.  자바단 - 패키지 생성
         a. controller 생성
             - /Sailing/src/main/java/com/boot/sailing/controller
@@ -133,6 +135,7 @@ https://github.com/spring-projects/sts4/wiki/Previous-Versions
         d. DB 생성
             - /Sailing/src/main/java/com/boot/sailing/comm
        
+	   
     d. 화면 연결 흐름
         - 클라이언트(Chrome) > request > Controller(안내소) > View(.html) > response > 클라이언트(Chrome)
         
