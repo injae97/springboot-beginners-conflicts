@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class OrderCon {
 	
 	@GetMapping("/order")
-	public String doHome() {
+	public String doOrder() {
 		return "/order/order"; 
 	}
 }
