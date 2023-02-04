@@ -5,7 +5,6 @@
         public String doHome() {
             return "/member/member"; 
         }
-        
         * 공통으로 접속되는 경로일 때 클래스 위에 선언해서 사용
 
     b. [GET 방식] - @GetMapping 
