@@ -1,0 +1,40 @@
+## 💡 Spring - Controller & RestController 에 대한 기본적인 이해
+
+    a. Controller
+        @Controller
+        @RequestMapping("URL-PATH")
+        public String doDefault() {
+            return "result"; // result.jsp 화면 렌더링
+        }
+    
+    b. RestController
+        - @Controller + @ResponBody = @RestController
+        
+        /* RestController.class */
+        @RestController
+        public class RestController {
+            @RequestMapping("URL-PATH")
+            public String doResponse() {
+                String strContents = "View : ResponBody!! <HR>  ";
+                return strContents;
+            }
+        }    
+
+    * HTTPServletResponse
+        - java에서 jsp를 만든 것
+        response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
+        out.println("<html><body>");
+        out.println(" View : response Self");
+        out.println("</body></html>");
+        
+    * @ResponBody
+        @RequestMapping("URL-PATH")
+        @ResponBody
+        public String useResponsebody() {
+            String strContents = "View : ResponBody!! ";
+            return strContents;
+        }
+        
+    * HTTPServletResponse 소스코드와 @ResponBody 안에 있는 소스코드와 동일
